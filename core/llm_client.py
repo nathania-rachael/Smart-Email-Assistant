@@ -3,7 +3,7 @@ import streamlit as st
 
 API_KEY = st.secrets["API_KEY"]
 
-MODEL = "models/gemini-2.0-flash"
+MODEL = "models/gemini-1.5-flash"
 ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/{MODEL}:generateContent"
 
 def call_llm(system_prompt, user_prompt):
@@ -27,3 +27,4 @@ def call_llm(system_prompt, user_prompt):
 
     data = res.json()
     return data["candidates"][0]["content"]["parts"][0]["text"]
+
